@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shubham Gajakas — HR Executive</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --bg2: #141414;
+    --bg3: #1a1a1a;
+    --border: #2a2a2a;
+    --text: #e8e4dc;
+    --muted: #666;
+    --accent: #c8a96e;
+    --accent2: #7eb8a4;
+    --tag-bg: #1e1e1e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* Layout */
+  .container { max-width: 720px; margin: 0 auto; padding: 0 2rem; }
+
+  /* Nav */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    border-bottom: 1px solid var(--border);
+    background: rgba(13,13,13,0.85);
+    backdrop-filter: blur(12px);
+  }
+  nav .inner {
+    max-width: 720px; margin: 0 auto; padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 54px;
+  }
+  .nav-logo { font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent); letter-spacing: 0.05em; }
+  .nav-links { display: flex; gap: 1.5rem; }
+  .nav-links a { font-size: 13px; color: var(--muted); transition: color 0.2s; font-family: 'Space Mono', monospace; }
+  .nav-links a:hover { color: var(--text); }
+
+  /* Hero */
+  .hero {
+    padding: 6rem 0 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  .hero-eyebrow span { color: var(--accent); }
+
+  .hero-profile { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem; }
+  .avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: linear-gradient(135deg, #c8a96e22, #7eb8a422);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 20px; font-weight: 700;
+    color: var(--accent);
+    flex-shrink: 0;
+    letter-spacing: -2px;
+  }
+  .hero-name { font-family: 'DM Sans', sans-serif; font-size: 2.2rem; font-weight: 500; letter-spacing: -0.5px; line-height: 1.2; }
+  .hero-role { color: var(--muted); font-size: 14px; margin-top: 4px; font-family: 'Space Mono', monospace; }
+
+  .hero-bio {
+    font-size: 16px; color: #a09890; line-height: 1.8; max-width: 580px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-link {
+    display: flex; align-items: center; gap: 6px;
+    font-family: 'Space Mono', monospace; font-size: 12px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 6px 14px; border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .hero-link:hover { color: var(--text); border-color: #444; background: var(--bg3); }
+  .hero-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  /* Sections */
+  section { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
+
+  .section-comment {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; color: var(--muted);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  .section-comment em { color: #444; font-style: normal; }
+
+  .section-title {
+    font-size: 1.4rem; font-weight: 500;
+    margin-bottom: 2rem;
+    letter-spacing: -0.3px;
+  }
+
+  /* Experience cards */
+  .exp-card {
+    display: flex; gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-card:last-child { border-bottom: none; }
+
+  .exp-badge {
+    width: 38px; height: 38px; border-radius: 8px;
+    background: var(--bg3); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace; font-size: 14px; font-weight: 700;
+    color: var(--accent); flex-shrink: 0;
+  }
+  .exp-body { flex: 1; }
+  .exp-company { font-weight: 500; font-size: 15px; }
+  .exp-role { color: var(--accent2); font-size: 13px; font-family: 'Space Mono', monospace; margin-top: 2px; }
+  .exp-date { color: var(--muted); font-size: 12px; font-family: 'Space Mono', monospace; float: right; }
+  .exp-desc { margin-top: 0.75rem; }
+  .exp-desc ul { list-style: none; padding: 0; }
+  .exp-desc li {
+    font-size: 14px; color: #888; line-height: 1.7;
+    padding-left: 1.25rem; position: relative; margin-bottom: 2px;
+  }
+  .exp-desc li::before { content: '—'; position: absolute; left: 0; color: #333; }
+
+  /* Education */
+  .edu-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+  }
+  .edu-degree { font-weight: 500; font-size: 15px; }
+  .edu-school { color: var(--accent); font-size: 14px; margin-top: 4px; }
+  .edu-meta { color: var(--muted); font-size: 12px; font-family: 'Space Mono', monospace; margin-top: 8px; }
+
+  /* Skills */
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: #999;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    padding: 6px 14px; border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .skill-tag:hover { color: var(--text); border-color: #444; }
+
+  /* Contact icebreakers */
+  .ice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 2.5rem; }
+  .ice-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .ice-card:hover { border-color: #444; background: var(--bg3); }
+  .ice-text { font-size: 13px; color: #888; line-height: 1.5; font-style: italic; }
+  .ice-cta { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 8px; }
+
+  /* Connect links */
+  .connect-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .connect-link {
+    font-family: 'Space Mono', monospace; font-size: 13px;
+    color: var(--muted); border-bottom: 1px solid var(--border);
+    padding-bottom: 2px; transition: all 0.2s;
+  }
+  .connect-link:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 2rem 0;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: #333;
+  }
+
+  /* Decorative rule */
+  .rule { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  /* Highlight text */
+  .hl { color: var(--accent); }
+  .hl2 { color: var(--accent2); }
+
+  /* Fade in animation */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.6s ease both; }
+  section { animation: fadeUp 0.5s ease both; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 5rem 0 3rem; }
+    .hero-name { font-size: 1.7rem; }
+    .ice-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .exp-date { float: none; display: block; margin-top: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <span class="nav-logo">shubham.hr</span>
+    <div class="nav-links">
+      <a href="#experience">experience</a>
+      <a href="#education">education</a>
+      <a href="#skills">skills</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="hero-eyebrow">// <span>hello, world</span></p>
+    <div class="hero-profile">
+      <div class="avatar">SG</div>
+      <div>
+        <h1 class="hero-name">Shubham Gajakas</h1>
+        <p class="hero-role">HR Executive · IT Recruitment · People Ops</p>
+      </div>
+    </div>
+    <p class="hero-bio">
+      HR professional passionate about building great teams and cultures. Skilled in end-to-end IT recruitment,
+      HRMS management, payroll processing, and statutory compliance (PF, ESIC, PT). I believe people are
+      every company's most valuable asset — and I'm dedicated to making sure they feel that way.
+    </p>
+    <div class="hero-links">
+      <a class="hero-link" href="mailto:shubhamgajakas@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        shubhamgajakas@gmail.com
+      </a>
+      <a class="hero-link" href="https://linkedin.com/in/shubham-gajakas-83128221b" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a class="hero-link" href="tel:8652749895">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +91 8652749895
+      </a>
+      <a class="hero-link" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Kalyan, Maharashtra
+      </a>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="section-comment">// <em>career</em></p>
+    <h2 class="section-title">Experience</h2>
+
+    <div class="exp-card">
+      <div class="exp-badge">C</div>
+      <div class="exp-body">
+        <div>
+          <span class="exp-company">Convergence IT Services</span>
+          <span class="exp-date">Jul 2024 — Present</span>
+        </div>
+        <p class="exp-role">HR Executive</p>
+        <div class="exp-desc">
+          <ul>
+            <li>Directing end-to-end IT recruitment & selection to secure top-tier talent</li>
+            <li>Processing monthly payroll with accuracy in salary calculations and deductions</li>
+            <li>Ensuring statutory compliance — PF, ESIC, and Professional Tax</li>
+            <li>Streamlining leave, attendance, and compensation management workflows</li>
+            <li>Leading onboarding & offboarding for smooth employee transitions</li>
+            <li>Organising team-building and engagement activities to foster a positive culture</li>
+            <li>Scheduling and facilitating performance review meetings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-badge">C</div>
+      <div class="exp-body">
+        <div>
+          <span class="exp-company">Convergence IT Services</span>
+          <span class="exp-date">Jan 2024 — Jun 2024</span>
+        </div>
+        <p class="exp-role">Talent Acquisition Intern</p>
+        <div class="exp-desc">
+          <ul>
+            <li>Supported IT recruitment pipelines and candidate sourcing strategies</li>
+            <li>Assisted in coordinating engagement activities and HR operations</li>
+            <li>Helped maintain leave, attendance, and HRMS records</li>
+            <li>Contributed to onboarding processes and performance review scheduling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <p class="section-comment">// <em>academics</em></p>
+    <h2 class="section-title">Education</h2>
+    <div class="edu-card">
+      <p class="edu-degree">Bachelor of Management Studies — Human Resources</p>
+      <p class="edu-school">K.V. Pendharkar College of Arts, Commerce & Science</p>
+      <p class="edu-meta">Dombivli, India &nbsp;·&nbsp; Aug 2020 – Apr 2023</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <p class="section-comment">// <em>toolbox</em></p>
+    <h2 class="section-title">Skills & Expertise</h2>
+    <div class="skills-grid">
+      <span class="skill-tag">IT Recruitment</span>
+      <span class="skill-tag">Talent Acquisition</span>
+      <span class="skill-tag">HRMS Management</span>
+      <span class="skill-tag">Payroll Processing</span>
+      <span class="skill-tag">Employee Relations</span>
+      <span class="skill-tag">PF / ESIC / PT Compliance</span>
+      <span class="skill-tag">Leave & Attendance</span>
+      <span class="skill-tag">Onboarding & Offboarding</span>
+      <span class="skill-tag">Employee Engagement</span>
+      <span class="skill-tag">Conflict Resolution</span>
+      <span class="skill-tag">Employee Grievances</span>
+      <span class="skill-tag">Performance Reviews</span>
+      <span class="skill-tag">Problem Solving</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-comment">// <em>let's talk</em></p>
+    <h2 class="section-title">Ready to connect?</h2>
+    <p style="color:#888; font-size:14px; margin-bottom: 1.5rem;">
+      Whether you're hiring, collaborating, or just want to talk HR — I'm always open to a good conversation.
+      Not sure how to start? Borrow one of these:
+    </p>
+
+    <div class="ice-grid">
+      <div class="ice-card" onclick="window.location='mailto:shubhamgajakas@gmail.com?subject=Hi Shubham! Let\'s connect&body=Hi Shubham, I came across your portfolio and would love to explore opportunities together...'">
+        <p class="ice-text">"Hi Shubham, your HR expertise is exactly what we're looking for..."</p>
+        <p class="ice-cta">click to use template →</p>
+      </div>
+      <div class="ice-card" onclick="window.location='mailto:shubhamgajakas@gmail.com?subject=HR Collaboration&body=Hi Shubham, I saw your experience in IT recruitment and would love to chat!'">
+        <p class="ice-text">"I saw your IT recruitment experience and we'd love to chat."</p>
+        <p class="ice-cta">click to use template →</p>
+      </div>
+      <div class="ice-card" onclick="window.location='mailto:shubhamgajakas@gmail.com?subject=Open Role — HR&body=Hi Shubham, we have an exciting HR opening that matches your profile perfectly!'">
+        <p class="ice-text">"Shubham, we have a role that matches your profile perfectly!"</p>
+        <p class="ice-cta">click to use template →</p>
+      </div>
+      <div class="ice-card" onclick="window.location='mailto:shubhamgajakas@gmail.com?subject=HR Chat&body=Hi Shubham, let\'s connect and talk about the HR landscape!'">
+        <p class="ice-text">"Let's connect and talk about all things people & culture."</p>
+        <p class="ice-cta">click to use template →</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:14px; font-weight:500; margin-bottom: 1rem; color:#999; font-family:'Space Mono',monospace;">find me on</h3>
+    <div class="connect-links">
+      <a class="connect-link" href="https://linkedin.com/in/shubham-gajakas-83128221b" target="_blank">LinkedIn</a>
+      <a class="connect-link" href="mailto:shubhamgajakas@gmail.com">Email</a>
+      <a class="connect-link" href="tel:8652749895">Phone</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    © 2026 Shubham Gajakas. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>

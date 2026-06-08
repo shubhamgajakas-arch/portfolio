@@ -178,8 +178,8 @@ nav .inner{
 .hero-role em{color:var(--accent);font-style:normal;}
 .hero-tagline{
   font-family:'Playfair Display',serif;font-style:italic;
-  font-size:13px;color:var(--accent);opacity:.75;
-  margin-top:7px;letter-spacing:.02em;
+  font-size:13.5px;color:var(--accent);opacity:.8;
+  margin-top:8px;letter-spacing:.01em;
 }
 .tw-wrap::after{content:'|';color:var(--accent);animation:blink 1s step-end infinite;font-style:normal;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
@@ -482,35 +482,17 @@ footer em{color:var(--accent);font-style:normal;}
 section:hover .section-num{opacity:.38;}
 
 /* ── OPEN-TO TAGS ── */
-.open-to-row{
-  display:flex;gap:7px;flex-wrap:wrap;margin-bottom:1.4rem;
-  opacity:0;animation:fadeUp .6s .08s ease forwards;
-}
-.open-to-tag{
-  font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.08em;
-  color:var(--muted2);background:var(--bg3);border:1px solid var(--border);
-  padding:4px 12px;border-radius:100px;transition:all .2s;
-}
-.open-to-tag:hover{color:var(--accent);border-color:var(--accent);}
-.open-to-label{
-  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:.55rem;
-  opacity:0;animation:fadeUp .6s .04s ease forwards;
-}
+
+
+
+
 
 /* ── SPARKLINE TIMELINE in exp cards ── */
-.exp-spark{
-  display:flex;align-items:center;gap:6px;margin-top:.6rem;margin-bottom:.2rem;
-}
-.spark-bar-wrap{
-  flex:1;height:3px;background:var(--border);border-radius:10px;overflow:hidden;
-}
-.spark-bar{
-  height:100%;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));
-  width:0%;transition:width 1.1s cubic-bezier(.23,1,.32,1);
-}
-.reveal.visible .spark-bar{width:var(--spark-w,50%);}
-.spark-label{font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);white-space:nowrap;letter-spacing:.03em;}
+
+
+
+.reveal.visible 
+
 
 /* ── SKILL PROFICIENCY RING in tooltip ── */
 .tooltip-prof{
@@ -520,8 +502,8 @@ section:hover .section-num{opacity:.38;}
 .prof-ring-wrap svg{width:32px;height:32px;transform:rotate(-90deg);}
 .prof-ring-bg{fill:none;stroke:var(--border);stroke-width:3;}
 .prof-ring-fill{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;
-  stroke-dasharray:56.55;stroke-dashoffset:56.55;transition:stroke-dashoffset .8s cubic-bezier(.23,1,.32,1);}
-.skill-tag:hover .prof-ring-fill{stroke-dashoffset:var(--ring-offset,28.27);}
+  stroke-dasharray:75.4;stroke-dashoffset:75.4;transition:stroke-dashoffset .8s cubic-bezier(.23,1,.32,1);}
+.skill-tag:hover .prof-ring-fill{stroke-dashoffset:var(--ring-offset,37.7);}
 .prof-label{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);}
 
 @media(max-width:640px){
@@ -684,16 +666,6 @@ section:hover .section-num{opacity:.38;}
     <div id="float-canvas"></div>
 
     <div class="otw-badge"><div class="otw-dot"></div>Open to Opportunities</div>
-
-    <p class="open-to-label">currently open to</p>
-    <div class="open-to-row">
-      <span class="open-to-tag">Full-time</span>
-      <span class="open-to-tag">Mumbai · Thane · Navi Mumbai</span>
-      <span class="open-to-tag">Hybrid / On-site</span>
-      <span class="open-to-tag">HR Executive</span>
-      <span class="open-to-tag">Talent Acquisition</span>
-    </div>
-
     <p class="hero-eyebrow"><em>Hello, world</em> - HR Executive &middot; Mumbai</p>
 
     <div class="hero-profile">
@@ -708,7 +680,7 @@ section:hover .section-num{opacity:.38;}
       <div>
         <h1 class="hero-name"><span class="tw-wrap" id="tw"></span></h1>
         <p class="hero-role">HR Executive &nbsp;&middot;&nbsp; IT Recruitment &nbsp;&middot;&nbsp; <em>People Ops</em></p>
-        <p class="hero-tagline">I build teams, not just fill positions.</p>
+        <p class="hero-tagline">Aligning people, process &amp; purpose — from hire to retire.</p>
       </div>
     </div>
 
@@ -767,11 +739,6 @@ section:hover .section-num{opacity:.38;}
         <div class="exp-right">
           <div><span class="exp-company">Convergence IT Services</span><span class="exp-date">Jul 2024 - Present</span></div>
           <p class="exp-role">HR Executive</p>
-          <div class="exp-spark">
-            <span class="spark-label">~23 mo</span>
-            <div class="spark-bar-wrap"><div class="spark-bar" style="--spark-w:100%"></div></div>
-            <span class="spark-label">current</span>
-          </div>
           <div class="exp-desc"><ul>
             <li>Directed IT recruitment and selection processes to secure top talent</li>
             <li>Coordinated employee engagement activities, fostering a positive workplace culture</li>
@@ -790,11 +757,6 @@ section:hover .section-num{opacity:.38;}
         <div class="exp-right">
           <div><span class="exp-company">Convergence IT Services</span><span class="exp-date">Jan 2024 - Jun 2024</span></div>
           <p class="exp-role">Talent Acquisition Intern</p>
-          <div class="exp-spark">
-            <span class="spark-label">6 mo</span>
-            <div class="spark-bar-wrap"><div class="spark-bar" style="--spark-w:50%"></div></div>
-            <span class="spark-label">internship</span>
-          </div>
           <div class="exp-desc"><ul>
             <li>Supported end-to-end IT recruitment by sourcing candidates across job portals and LinkedIn</li>
             <li>Conducted initial screening calls to assess candidate fitment and interest</li>
@@ -891,7 +853,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">IT Recruitment</div>
         <div class="tooltip-body">Directed IT recruitment and selection processes to secure top talent across technical roles.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:5.65"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:9.4"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Expert · 90%</span>
         </div>
       </span></span>
@@ -900,7 +862,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">Talent Acquisition</div>
         <div class="tooltip-body">Handled end-to-end talent acquisition - sourcing, screening, and coordinating selection processes to build strong pipelines.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:8.48"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:11.3"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Expert · 85%</span>
         </div>
       </span></span>
@@ -909,7 +871,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">HRMS Management</div>
         <div class="tooltip-body">Managed employee records, leave, attendance, and payroll data via HRMS to ensure accurate and up-to-date HR information.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:10.18"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:13.2"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Advanced · 82%</span>
         </div>
       </span></span>
@@ -918,7 +880,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">Payroll Processing</div>
         <div class="tooltip-body">Processed monthly payroll maintaining accuracy in salary calculations and deductions for the organisation.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:11.31"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:15.1"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Advanced · 80%</span>
         </div>
       </span></span>
@@ -927,7 +889,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">Employee Relations</div>
         <div class="tooltip-body">Enhanced employee relations through effective communication, fostering a positive and collaborative workplace culture.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:8.48"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:11.3"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Expert · 85%</span>
         </div>
       </span></span>
@@ -936,7 +898,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">Statutory Compliance</div>
         <div class="tooltip-body">Ensured compliance with statutory regulations regarding PF, ESIC, and Professional Tax throughout tenure.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:13.01"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:17"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Proficient · 77%</span>
         </div>
       </span></span>
@@ -945,7 +907,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">Leave &amp; Attendance</div>
         <div class="tooltip-body">Streamlined leave, attendance, and compensation management processes, improving overall operational efficiency.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:10.18"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:13.2"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Advanced · 82%</span>
         </div>
       </span></span>
@@ -954,7 +916,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">Onboarding &amp; Offboarding</div>
         <div class="tooltip-body">Oversaw onboarding and offboarding processes, facilitating smooth and structured transitions for employees.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:8.48"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:11.3"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Expert · 85%</span>
         </div>
       </span></span>
@@ -963,7 +925,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">Employee Engagement</div>
         <div class="tooltip-body">Coordinated engagement activities and organized team-building exercises to foster collaboration and a supportive work environment.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:5.65"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:9.4"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Expert · 90%</span>
         </div>
       </span></span>
@@ -972,7 +934,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">Conflict Resolution</div>
         <div class="tooltip-body">Skilled in resolving interpersonal concerns through effective communication and a fair, people-first approach.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:11.31"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:15.1"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Advanced · 80%</span>
         </div>
       </span></span>
@@ -981,7 +943,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">Grievance Handling</div>
         <div class="tooltip-body">Addressed employee grievances with empathy and professionalism, maintaining trust in HR processes across the organisation.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:10.18"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:13.2"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Advanced · 82%</span>
         </div>
       </span></span>
@@ -990,7 +952,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">Performance Reviews</div>
         <div class="tooltip-body">Scheduled and led performance review meetings for teams and individuals to support growth and accountability.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:13.01"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:17"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Proficient · 77%</span>
         </div>
       </span></span>
@@ -999,7 +961,7 @@ section:hover .section-num{opacity:.38;}
         <div class="tooltip-title">Problem Solving</div>
         <div class="tooltip-body">Applied structured thinking to identify HR operational challenges and implement practical, effective solutions.</div>
         <div class="tooltip-prof">
-          <div class="prof-ring-wrap" style="--ring-offset:8.48"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
+          <div class="prof-ring-wrap" style="--ring-offset:11.3"><svg viewBox="0 0 24 24"><circle class="prof-ring-bg" cx="12" cy="12" r="9"/><circle class="prof-ring-fill" cx="12" cy="12" r="9"/></svg></div>
           <span class="prof-label">Expert · 85%</span>
         </div>
       </span></span>
